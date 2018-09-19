@@ -9,5 +9,12 @@
 import Foundation
 
 class MovieHomeViewModel{
+    var movieHomeAPIServiceObj = MovieHomeAPIService()
+    
+    func callMovieListApi(completion:@escaping([MovieHomeModel]) -> Void){
+        movieHomeAPIServiceObj.callMovieListAPI { (movieListObject) in
+            completion(movieListObject)
+        }
+    }
     
 }
