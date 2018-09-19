@@ -49,8 +49,9 @@ class MovieHomeViewController: UIViewController,UICollectionViewDelegate,UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let movieDetailsViewControllerObject = storyboard?.instantiateViewController(withIdentifier: "MovieDetails")
-        self.navigationController?.pushViewController(movieDetailsViewControllerObject!, animated: true)
+        let movieDetailsViewControllerObject = storyboard?.instantiateViewController(withIdentifier: "MovieDetails") as! MovieDetailsViewController
+        movieDetailsViewControllerObject.selectedMovieId = movieList[indexPath.row].movieId
+        self.navigationController?.pushViewController(movieDetailsViewControllerObject, animated: true)
     }
  
 }

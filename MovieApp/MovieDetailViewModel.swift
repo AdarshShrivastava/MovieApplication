@@ -10,4 +10,11 @@ import Foundation
 
 class movieDetailViewModel{
     
+    var movieDetailsAPIServiceObject = MovieDetailsAPIService()
+    func callMovieDetailsAPI(id:Int64,completion:@escaping(MovieDetailsModel)->()){
+        movieDetailsAPIServiceObject.callMovieDetailsAPI(id: id) { (movieDetailsObject) in
+            completion(movieDetailsObject)
+        }
+    }
+    
 }

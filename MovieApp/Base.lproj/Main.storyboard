@@ -158,6 +158,11 @@
                             <constraint firstItem="ky4-8V-5zr" firstAttribute="top" secondItem="uot-0Y-yra" secondAttribute="bottom" constant="34" id="ri5-O3-hF7"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="movieOverview" destination="S7B-7n-J9y" id="hce-U5-nhT"/>
+                        <outlet property="movieTitle" destination="Idb-mR-T3Y" id="4Xr-H7-CMX"/>
+                        <outlet property="posterImage" destination="uot-0Y-yra" id="CAn-rc-BPd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vGT-Da-Tj1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
