@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+class MovieHomeAPIService{
+    
+    func callMovieListAPI(){
+        
+    }
+    
+}

@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+struct MovieHomeModel{
+    var title:String?
+    var imageLinkId:String?
+    var movieId:Int64?
+}

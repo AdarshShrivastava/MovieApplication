@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+struct MovieDetailsModel{
+    var posterLinkId:String?
+    var title:String?
+    var overview:String?
+}
