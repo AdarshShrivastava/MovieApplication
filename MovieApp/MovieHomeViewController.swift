@@ -37,13 +37,17 @@ class MovieHomeViewController: UIViewController,UICollectionViewDelegate,UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "movieCell", for: indexPath) as! MovieCollectionViewCell
         cell.movieTitle.text = movieList[indexPath.row].title
-        let movieThumbnailLink = "https://image.tmdb.org/t/p/w780" + movieList[indexPath.row].imageLinkId!
-        let url = URL(string: movieThumbnailLink)
-        let imageData = try? Data(contentsOf: url!)
+        if let imageLinkId = movieList[indexPath.row].imageLinkId{
+        let movieThumbnailLink = "https://image.tmdb.org/t/p/w780" + imageLinkId
+            let url = URL(string: movieThumbnailLink)
+            let imageData = try? Data(contentsOf: url!)
+        
+
         if let imageData = imageData{
             DispatchQueue.main.async {
                 cell.movieThumbnailImage.image = UIImage(data: imageData)
             }
+        }
         }
         return cell
     }

@@ -26,12 +26,14 @@ class MovieDetailsViewController: UIViewController {
             DispatchQueue.main.async {
             self.movieTitle.text = movieDetailsObject.title
             self.movieOverview.text = movieDetailsObject.overview
-            let posterLink = "https://image.tmdb.org/t/p/w780" + movieDetailsObject.posterLinkId!
+            if let posterLinkId = movieDetailsObject.posterLinkId{
+            let posterLink = "https://image.tmdb.org/t/p/w780" + posterLinkId
             let url = URL(string: posterLink)
             let imageData = try? Data(contentsOf: url!)
             if let imageData = imageData{
                 
                     self.posterImage.image = UIImage(data: imageData)
+                }
                 }
             }
         }
